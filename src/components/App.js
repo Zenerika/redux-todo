@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import TodoApp from './TodoApp'
+import TodoApp from '../containers/TodoAppContainer'
+import Navbar from './Navbar'
 
 class App extends Component {
   render() {
     return (
       <div>
-        <h1>Up and running</h1>
+        <Navbar />
         <TodoApp />
       </div>
     );
