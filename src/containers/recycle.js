@@ -15,7 +15,7 @@ newTodoItem(e) {
     // this.props.addTodo('homework')
     console.log(e.target.value)
   }
-  
+
 // TodoAppContainer
   handleTodoItemCompletion(e) {
     e.preventDefault()
@@ -27,3 +27,23 @@ newTodoItem(e) {
       return state
     }
   }
+
+//   TodoAppContainer
+<div className="content">
+<ul>
+  {this.props.todos.map((item, index) => <li onClick={() => {}}>{item.task}</li>)}
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+)
+}
+}
+
+const mapStateToProps = (state) => ({
+todos: state.todos
+})
+
+            // (todo => todo.id === action.id ? { ...todo, completed: !todo.completed } : todo)

@@ -15,28 +15,14 @@ class TodoAppContainer extends Component {
   handleChangeTodoItem(e) {
     e.preventDefault()
     this.setState({todoItem: e.target.value})
-    console.log(e.target.value)
   }
 
   handleSubmitNewTodo(e) {
     e.preventDefault()
     this.props.addTodo(this.state.todoItem)
   }
-
-  // handleTaskDone(e) {
-  //   e.preventDefault()
-  //   this.setState({done: true})
-  //   if (this.props.done === true) {
-  //     // change style
-  //     // {item.task.style={{textDecoration: done ? 'line-through' : 'none'}}}
-      
-  //   } else {
-  //     return state
-  //   }
-  // }
   
   render() {
-    console.log('props', this.props)
     return (
       <div className="columns is-centered">
         <div className="column is-half">
@@ -61,12 +47,11 @@ class TodoAppContainer extends Component {
               </div>
             </form>
 
-          <div className="content">
-            <ul>
-              {this.props.todos.map((item, index) => <li onClick={() => {}}>{item.task}</li>)}
-            </ul>
-          </div>
-
+            <div className="content">
+              <ul>
+                {this.props.todos.map((item, index) => <li onClick={() => this.props.toggleTodo(index)} style={{textDecoration: item.done ? 'line-through': null}}>{item.task}</li>)}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
