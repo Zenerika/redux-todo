@@ -24,7 +24,6 @@ const todoReducer = (state = initialState, action) => {
                 todos: doneTodos
             }
 
-
         default: 
             return state;
     }
